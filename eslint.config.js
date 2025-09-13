@@ -19,12 +19,13 @@ export default defineConfig([
             },
         },
         rules: {
-            "no-unused-vars": ["warn", { varsIgnorePattern: "^[A-Z_]" }],
+            "no-unused-vars": "warn",
             "no-undef": "error",
             "no-use-before-define": "error",
             "block-scoped-var": "error",
             "default-param-last": "error",
             "react-refresh/only-export-components": "off",
+            "unused-imports": "warn",
         },
     },
 ]);

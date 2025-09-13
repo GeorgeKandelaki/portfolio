@@ -2,39 +2,40 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     :root {
-        &, &.light-mode {
-            /* Light mode (default) */
+        /* &, &.light-mode {
         
-            --color-grey-0: #18212f;
-            --color-grey-50: #111827;
-            --color-grey-100: #1f2937;
-            --color-grey-200: #374151;
-            --color-grey-300: #4b5563;
-            --color-grey-400: #6b7280;
-            --color-grey-500: #9ca3af;
-            --color-grey-600: #d1d5db;
-            --color-grey-700: #e5e7eb;
-            --color-grey-800: #f3f4f6;
-            --color-grey-900: #f9fafb;
+    
         }
 
         &.dark-mode{
-            /* Dark mode */
-            --color-grey-0: #fff;
-            --color-grey-50: #f9fafb;
-            --color-grey-100: #f3f4f6;
-            --color-grey-200: #e5e7eb;
-            --color-grey-300: #d1d5db;
-            --color-grey-400: #9ca3af;
-            --color-grey-500: #6b7280;
-            --color-grey-600: #4b5563;
-            --color-grey-700: #374151;
-            --color-grey-800: #1f2937;
-            --color-grey-900: #111827;
 
-        }
-        
-        
+
+        }*/
+
+        --color-grey-100: #1f2937;
+        --color-grey-200: #374151;
+        --color-grey-300: #4b5563;
+        --color-grey-400: #6b7280;
+        --color-grey-500: #9ca3af;
+        --color-grey-600: #d1d5db;
+        --color-grey-700: #e5e7eb;
+        --color-grey-800: #f3f4f6;
+        --color-grey-900: #f9fafb;
+        --color-grey-50: #111827;
+        --color-grey-0: #18212f;
+/* 
+        --color-grey-0: #fff;
+        --color-grey-50: #f9fafb;
+        --color-grey-100: #f3f4f6;
+        --color-grey-300: #d1d5db;
+        --color-grey-400: #9ca3af;
+        --color-grey-500: #6b7280;
+        --color-grey-600: #4b5563;
+        --color-grey-700: #374151;
+        --color-grey-800: #1f2937;
+        --color-grey-900: #111827;
+        --color-grey-200: #e5e7eb; */
+
         // Screaming Green
         --color-brand-100: #dafbde;
         --color-brand-200: #b6f7bd;
@@ -47,7 +48,7 @@ const GlobalStyles = createGlobalStyle`
         --color-brand-900: #0e811c;
         --color-brand-1000: #06370c;
         
-
+        --color-indigo-100: #e4d6ff;
         --color-indigo-200:#c9adff;
         --color-indigo-400:#8A4FFF;
         --color-indigo-600:#5c0aff;

@@ -1,5 +1,7 @@
+import SkillsDetail from "../features/skills/SkillsDetail";
+
 function Skills() {
-    return <div></div>;
+    return <SkillsDetail />;
 }
 
 export default Skills;
