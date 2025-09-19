@@ -2,6 +2,8 @@ import { createContext, useContext } from "react";
 
 const ProjectsContext = createContext();
 
+console.log(process.env.LINK);
+
 function ProjectsProvider({ children }) {
     return <ProjectsContext.Provider value={{ projects: [] }}>{children}</ProjectsContext.Provider>;
 }
@@ -9,7 +11,7 @@ function ProjectsProvider({ children }) {
 function useProjects() {
     const context = useContext(ProjectsContext);
 
-    if (context === undefined) throw new Error("ProjectsContext was use outside the scope of ProjectsProvider");
+    if (context === undefined) throw new Error("ProjectsContext was used outside of the scope of ProjectsProvider");
 
     return context;
 }

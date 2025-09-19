@@ -25,7 +25,6 @@ export default defineConfig([
             "block-scoped-var": "error",
             "default-param-last": "error",
             "react-refresh/only-export-components": "off",
-            "unused-imports": "warn",
         },
     },
 ]);
