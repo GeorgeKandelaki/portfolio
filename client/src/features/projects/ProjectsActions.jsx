@@ -12,7 +12,7 @@ function ProjectsActions() {
     return (
         <StyledProjectsActions>
             <Filter
-                filterField="filterBy"
+                filterField="difficulty"
                 options={[
                     {
                         label: "All",

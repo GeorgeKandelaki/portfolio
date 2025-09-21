@@ -9,15 +9,13 @@ const StyledAppLayout = styled.div`
     grid-template-rows: auto 1fr;
     background-color: var(--color-grey-50);
 
-    height: 100vh;
+    height: 100%;
 `;
 
 const Main = styled.main`
     padding: 2.4rem 3.2rem;
     grid-column: 2 / 3;
     grid-row: 2;
-
-    /* align-content: center; */
 `;
 
 function AppLayout() {

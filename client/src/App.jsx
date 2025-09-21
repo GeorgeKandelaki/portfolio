@@ -8,21 +8,25 @@ import Projects from "./pages/Projects";
 import Project from "./pages/Project";
 import Skills from "./pages/Skills";
 import AboutMe from "./pages/AboutMe";
+import { ProjectsProvider } from "./context/ProjectsContext";
 
 function App() {
     return (
         <>
             <GlobalStyles />
             <BrowserRouter>
-                <Routes>
-                    <Route element={<AppLayout />}>
-                        <Route index element={<Home />} />
-                        <Route path="projects" element={<Projects />} />
-                        <Route path="projects/:projectId" element={<Project />} />
-                        <Route path="skills" element={<Skills />} />
-                        <Route path="aboutme" element={<AboutMe />} />
-                    </Route>
-                </Routes>
+                <ProjectsProvider>
+                    <Routes>
+                        <Route element={<AppLayout />}>
+                            <Route index element={<Home />} />
+
+                            <Route path="projects" element={<Projects />} />
+                            <Route path="projects/:projectId" element={<Project />} />
+                            <Route path="skills" element={<Skills />} />
+                            <Route path="aboutme" element={<AboutMe />} />
+                        </Route>
+                    </Routes>
+                </ProjectsProvider>
             </BrowserRouter>
         </>
     );

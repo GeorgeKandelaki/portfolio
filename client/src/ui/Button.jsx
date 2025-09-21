@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 const sizes = {
     small: css`
         font-size: 1.2rem;
@@ -22,17 +21,31 @@ const sizes = {
 
 const variations = {
     primary: css`
-        background-color: var(--color-indigo-600);
-        color: var(--color-grey-700);
+        color: var(--color-brand-50);
+        background-color: var(--color-brand-600);
 
         &:hover {
-            background-color: var(--color-indigo-900);
+            background-color: var(--color-brand-700);
         }
     `,
-    secondary: css``,
-    danger: css``,
-};
+    secondary: css`
+        color: var(--color-grey-600);
+        background: var(--color-grey-0);
+        border: 1px solid var(--color-grey-200);
 
+        &:hover {
+            background-color: var(--color-grey-50);
+        }
+    `,
+    danger: css`
+        color: var(--color-red-100);
+        background-color: var(--color-red-700);
+
+        &:hover {
+            background-color: var(--color-red-800);
+        }
+    `,
+};
 const Button = styled.button`
     border: none;
     border-radius: var(--border-radius-sm);
