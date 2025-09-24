@@ -16,6 +16,8 @@ const Main = styled.main`
     padding: 2.4rem 3.2rem;
     grid-column: 2 / 3;
     grid-row: 2;
+
+    height: 100%;
 `;
 
 function AppLayout() {

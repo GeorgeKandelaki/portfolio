@@ -3,6 +3,6 @@ const projectsController = require("../controllers/projectsController");
 
 const router = express.Router();
 
-router.get("/write_frontend_mentor_data", projectsController.getProjects);
+router.get("/", projectsController.getProjects);
 
 module.exports = router;

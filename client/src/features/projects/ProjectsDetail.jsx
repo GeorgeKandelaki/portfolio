@@ -15,11 +15,10 @@ const StyledProjects = styled.div`
 `;
 
 const Projects = styled.div`
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3.2rem;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: stretch; /* force all items to be equal height */
 `;
 
 function ProjectsDetail() {
@@ -27,7 +26,7 @@ function ProjectsDetail() {
 
     useEffect(
         function () {
-            console.log(getProjects());
+            getProjects();
         },
         [getProjects]
     );
@@ -44,7 +43,7 @@ function ProjectsDetail() {
 
             <Projects>
                 {projects.map((project) => (
-                    <ProjectItem project={project} key={project.id} />
+                    <ProjectItem project={project} key={project._id} />
                 ))}
             </Projects>
         </StyledProjects>

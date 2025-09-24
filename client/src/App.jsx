@@ -9,24 +9,27 @@ import Project from "./pages/Project";
 import Skills from "./pages/Skills";
 import AboutMe from "./pages/AboutMe";
 import { ProjectsProvider } from "./context/ProjectsContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
     return (
         <>
             <GlobalStyles />
             <BrowserRouter>
-                <ProjectsProvider>
-                    <Routes>
-                        <Route element={<AppLayout />}>
-                            <Route index element={<Home />} />
+                <DarkModeProvider>
+                    <ProjectsProvider>
+                        <Routes>
+                            <Route element={<AppLayout />}>
+                                <Route index element={<Home />} />
 
-                            <Route path="projects" element={<Projects />} />
-                            <Route path="projects/:projectId" element={<Project />} />
-                            <Route path="skills" element={<Skills />} />
-                            <Route path="aboutme" element={<AboutMe />} />
-                        </Route>
-                    </Routes>
-                </ProjectsProvider>
+                                <Route path="projects" element={<Projects />} />
+                                <Route path="projects/:projectId" element={<Project />} />
+                                <Route path="skills" element={<Skills />} />
+                                <Route path="aboutme" element={<AboutMe />} />
+                            </Route>
+                        </Routes>
+                    </ProjectsProvider>
+                </DarkModeProvider>
             </BrowserRouter>
         </>
     );

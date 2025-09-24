@@ -9,12 +9,12 @@ const initialState = {
 
 function reducer(state, action) {
     switch (action.type) {
-        case "projects/get":
+        case "projects/fetched":
             return { ...state, projects: action.payload };
 
         case "projects/loading":
             return { ...state, isLoading: true };
-        case "projects/finished":
+        case "projects/loaded":
             return { ...state, isLoading: false };
 
         default: {
@@ -32,12 +32,16 @@ function ProjectsProvider({ children }) {
         try {
             dispatch({ type: "projects/loading" });
 
-            const projects = await getProjectsApi();
-            console.log(projects);
+            const response = await getProjectsApi();
+            const { data } = response;
+
+            if (data.status !== "Success") return toast.error("Oops! Projects couldn't be loaded. ");
+
+            dispatch({ type: "projects/fetched", payload: data.data.projects });
         } catch (err) {
             toast.error(err.message);
         } finally {
-            dispatch({ type: "projects/finished" });
+            dispatch({ type: "projects/loaded" });
         }
     }, []);
 
