@@ -25,7 +25,7 @@ const StyledButtonGroup = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2.4rem 1.8rem 1.8rem;
+    margin: 2.5rem 1.8rem;
 `;
 
 const StyledImageContainer = styled.div`
