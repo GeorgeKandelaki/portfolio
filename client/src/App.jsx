@@ -10,26 +10,37 @@ import Skills from "./pages/Skills";
 import AboutMe from "./pages/AboutMe";
 import { ProjectsProvider } from "./context/ProjectsContext";
 import { DarkModeProvider } from "./context/DarkModeContext";
+import { UserProvider } from "./context/userContext";
+import ProtectRoute from "./features/authentication/ProtectRoute";
+import Login from "./features/authentication/Login";
+import Signup from "./features/authentication/Signup";
 
 function App() {
     return (
         <>
             <GlobalStyles />
             <BrowserRouter>
-                <DarkModeProvider>
-                    <ProjectsProvider>
-                        <Routes>
-                            <Route element={<AppLayout />}>
-                                <Route index element={<Home />} />
+                <UserProvider>
+                    <DarkModeProvider>
+                        <ProjectsProvider>
+                            <Routes>
+                                <Route element={<AppLayout />}>
+                                    <Route index element={<Home />} />
 
-                                <Route path="projects" element={<Projects />} />
-                                <Route path="projects/:projectId" element={<Project />} />
-                                <Route path="skills" element={<Skills />} />
-                                <Route path="aboutme" element={<AboutMe />} />
-                            </Route>
-                        </Routes>
-                    </ProjectsProvider>
-                </DarkModeProvider>
+                                    <Route path="projects" element={<Projects />} />
+                                    <Route path="projects/:projectId" element={<Project />} />
+                                    <Route path="skills" element={<Skills />} />
+                                    <Route path="aboutme" element={<AboutMe />} />
+                                    <Route path="login" element={<Login />} />
+                                </Route>
+
+                                <Route element={<ProtectRoute />}>
+                                    <Route path="signup" element={<Signup />} />
+                                </Route>
+                            </Routes>
+                        </ProjectsProvider>
+                    </DarkModeProvider>
+                </UserProvider>
             </BrowserRouter>
         </>
     );

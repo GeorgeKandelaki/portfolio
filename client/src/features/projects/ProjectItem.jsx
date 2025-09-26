@@ -52,8 +52,8 @@ function ProjectItem({ project }) {
             </StyledProjectInfo>
 
             <StyledButtonGroup>
-                <Button onClick={() => window.location.assign(project.repoURL)}>Code</Button>
-                <Button onClick={() => window.location.assign(project.liveURL)}>Live</Button>
+                <Button onClick={() => window.open(project.repoURL, "_blank").focus()}>Code</Button>
+                <Button onClick={() => window.open(project.liveURL, "_blank").focus()}>Live</Button>
             </StyledButtonGroup>
         </StyledProjectItem>
     );

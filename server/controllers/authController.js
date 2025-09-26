@@ -38,7 +38,7 @@ exports.protect = catchAsync(async function (req, res, next) {
         token = req.headers.authorization.split(" ")[1];
     else if (req.cookies.jwt) token = req.cookies.jwt;
 
-    if (!token) return next(new Error("Token is invalid or not found!"));
+    if (!token) return next(new Error("Token is invalid or not found! Check if you are logged in."));
 
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
 
@@ -69,4 +69,25 @@ exports.login = catchAsync(async function (req, res, next) {
         return next(new Error("Users password or email is incorrect!"));
 
     return createSendToken(user, 201, req, res);
+});
+
+exports.checkLoggedIn = catchAsync(async function (req, res, next) {
+    let token;
+
+    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer"))
+        token = req.headers.authorization.split(" ")[1];
+    else if (req.cookies.jwt) token = req.cookies.jwt;
+
+    if (!token) return res.status(200).json({ status: "Success", isAuthenticated: false });
+
+    try {
+        const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+        const currentUser = await User.findById(decoded.id).select("-password");
+
+        if (!currentUser) return res.status(200).json({ status: "Success", isAuthenticated: false });
+
+        return res.status(200).json({ status: "Success", isAuthenticated: true, user: currentUser });
+    } catch (err) {
+        return res.status(200).json({ status: "Success", isAuthenticated: false });
+    }
 });
