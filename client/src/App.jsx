@@ -34,9 +34,9 @@ function App() {
                                     <Route path="login" element={<Login />} />
                                 </Route>
 
-                                <Route element={<ProtectRoute />}>
-                                    <Route path="signup" element={<Signup />} />
-                                </Route>
+                                {/* <Route element={<ProtectRoute />}> */}
+                                <Route path="signup" element={<Signup />} />
+                                {/* </Route> */}
                             </Routes>
                         </ProjectsProvider>
                     </DarkModeProvider>

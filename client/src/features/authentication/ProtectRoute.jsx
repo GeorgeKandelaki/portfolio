@@ -6,14 +6,14 @@ import LinkButton from "../../ui/LinkButton.jsx";
 import { Outlet } from "react-router";
 
 function ProtectRoute({ children }) {
-    const { isLoading, isAuthenticated, checkAuthentication } = useUser();
+    const { isLoading, isAuthenticated } = useUser();
 
-    useEffect(
-        function () {
-            checkAuthentication();
-        },
-        [checkAuthentication]
-    );
+    // useEffect(
+    //     function () {
+    //         checkAuthentication();
+    //     },
+    //     [checkAuthentication]
+    // );
 
     if (isLoading) return <Spinner />;
 
