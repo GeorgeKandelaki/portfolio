@@ -1,11 +1,16 @@
 import { useState } from "react";
+import Button from "../../ui/Button";
+import { useUser } from "../../context/userContext";
 
 function Signup() {
+    const { createUser, isLoading } = useUser();
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
 
     function handleSubmit(e) {
-        e.preventDefault;
+        e.preventDefault();
+
+        createUser(name, password);
     }
 
     return (
@@ -18,6 +23,10 @@ function Signup() {
             <div>
                 <label>Password</label>
                 <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password..." />
+            </div>
+
+            <div>
+                <Button>{isLoading ? "Creating..." : "Submit Form"}</Button>
             </div>
         </form>
     );

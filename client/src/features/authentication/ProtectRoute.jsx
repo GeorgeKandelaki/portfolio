@@ -8,13 +8,6 @@ import { Outlet } from "react-router";
 function ProtectRoute({ children }) {
     const { isLoading, isAuthenticated } = useUser();
 
-    // useEffect(
-    //     function () {
-    //         checkAuthentication();
-    //     },
-    //     [checkAuthentication]
-    // );
-
     if (isLoading) return <Spinner />;
 
     if (!isAuthenticated)

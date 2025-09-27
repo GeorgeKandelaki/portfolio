@@ -65,7 +65,7 @@ exports.login = catchAsync(async function (req, res, next) {
 
     if (!user) return next(new Error("User couldn't be found or is invalid!"));
 
-    if (!(await user.comparePasswords(password, user.password)))
+    if (!(await user.comparePassword(password, user.password)))
         return next(new Error("Users password or email is incorrect!"));
 
     return createSendToken(user, 201, req, res);

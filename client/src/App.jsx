@@ -32,11 +32,11 @@ function App() {
                                     <Route path="skills" element={<Skills />} />
                                     <Route path="aboutme" element={<AboutMe />} />
                                     <Route path="login" element={<Login />} />
-                                </Route>
 
-                                {/* <Route element={<ProtectRoute />}> */}
-                                <Route path="signup" element={<Signup />} />
-                                {/* </Route> */}
+                                    <Route element={<ProtectRoute />}>
+                                        <Route path="signup" element={<Signup />} />
+                                    </Route>
+                                </Route>
                             </Routes>
                         </ProjectsProvider>
                     </DarkModeProvider>

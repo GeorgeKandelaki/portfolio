@@ -5,7 +5,6 @@ import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import ProjectsActions from "./ProjectsActions";
 import ProjectItem from "./ProjectItem";
-import { useEffect } from "react";
 import { useProjects } from "../../context/ProjectsContext";
 
 const StyledProjects = styled.div`
@@ -22,14 +21,14 @@ const Projects = styled.div`
 `;
 
 function ProjectsDetail() {
-    const { getProjects, projects, isLoading } = useProjects();
+    const { projects, isLoading } = useProjects();
 
-    useEffect(
-        function () {
-            getProjects();
-        },
-        [getProjects]
-    );
+    // useEffect(
+    //     function () {
+    //         if (!projects) getProjects();
+    //     },
+    //     [projects, getProjects]
+    // );
 
     if (isLoading) return <Spinner />;
 

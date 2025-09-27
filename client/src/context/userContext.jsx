@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
 import toast from "react-hot-toast";
-import { userIsAuthenticated } from "../services/apiUsers";
+import { signupUser, userIsAuthenticated, loginUser as loginUserApi } from "../services/apiUsers";
+import { useNavigate } from "react-router";
 
 const initialState = {
     isLoading: true,
@@ -18,8 +19,8 @@ function reducer(state, action) {
             return { ...state, isLoading: false };
         case "user/authenticate":
             return { ...state, isAuthenticated: action.payload };
-        // case "user/notAuthenticate":
-        // return { ...state, isAuthenticated: false };
+        case "user/fetched":
+            return { ...state, user: action.payload };
 
         default:
             throw Error("Unknown action: " + action.type);
@@ -27,6 +28,7 @@ function reducer(state, action) {
 }
 
 function UserProvider({ children }) {
+    const navigate = useNavigate();
     const [{ isLoading, user, isAuthenticated }, dispatch] = useReducer(reducer, initialState);
 
     const checkAuthentication = useCallback(async function () {
@@ -38,6 +40,7 @@ function UserProvider({ children }) {
 
             if (data.status !== "Success") return toast.error("Couldn't Authenticate User.");
 
+            dispatch({ type: "user/fetched", payload: data.user });
             dispatch({ type: "user/authenticate", payload: data.isAuthenticated });
         } catch (err) {
             console.error(err.response.data);
@@ -45,6 +48,47 @@ function UserProvider({ children }) {
             dispatch({ type: "user/loaded" });
         }
     }, []);
+
+    const createUser = useCallback(
+        async function (name, password) {
+            try {
+                dispatch({ type: "user/loading" });
+
+                const response = await signupUser(name, password);
+                const { data } = response;
+
+                if (data.status !== "Success") throw new Error("Couldn't create an user");
+
+                dispatch({ type: "user/fetched", payload: data.data.user });
+                navigate("/");
+            } catch (err) {
+                console.error(err);
+            } finally {
+                dispatch({ type: "user/loaded" });
+            }
+        },
+        [navigate]
+    );
+
+    const loginUser = useCallback(
+        async function (name, password) {
+            try {
+                dispatch({ type: "user/loading" });
+                const response = await loginUserApi(name, password);
+                const { data } = response;
+
+                if (data.status !== "Success") throw new Error("Couldn't log in the user.");
+
+                dispatch({ type: "user/fetched", payload: data.data.user });
+                navigate("/");
+            } catch (err) {
+                console.error(err);
+            } finally {
+                dispatch({ type: "user/loaded" });
+            }
+        },
+        [navigate]
+    );
 
     useEffect(
         function () {
@@ -54,7 +98,7 @@ function UserProvider({ children }) {
     );
 
     return (
-        <UserContext.Provider value={{ user, isLoading, isAuthenticated, checkAuthentication }}>
+        <UserContext.Provider value={{ user, isLoading, isAuthenticated, checkAuthentication, createUser, loginUser }}>
             {children}
         </UserContext.Provider>
     );

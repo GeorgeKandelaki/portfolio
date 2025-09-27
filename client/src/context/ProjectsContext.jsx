@@ -1,9 +1,9 @@
-import { createContext, useCallback, useContext, useReducer } from "react";
+import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
 import { getProjects as getProjectsApi } from "../services/apiProjects";
 import toast from "react-hot-toast";
 
 const initialState = {
-    projects: [],
+    projects: null,
     isLoading: true,
 };
 
@@ -44,6 +44,13 @@ function ProjectsProvider({ children }) {
             dispatch({ type: "projects/loaded" });
         }
     }, []);
+
+    useEffect(
+        function () {
+            if (!projects) getProjects();
+        },
+        [getProjects, projects]
+    );
 
     return <ProjectsContext.Provider value={{ projects, isLoading, getProjects }}>{children}</ProjectsContext.Provider>;
 }
