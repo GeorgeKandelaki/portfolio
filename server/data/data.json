@@ -1,0 +1,290 @@
+[
+    {
+        "title": "Multistep Form. Made with Vanilla JS, SCSS and BEM notation.",
+        "liveURL": "https://multistep-form-phi-beryl.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/multistep-form",
+        "difficulty": 1,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1737990015/Screenshots/pf572wfldqv0kh1uqjvv.jpg",
+        "description": "This multistep form project demonstrates a clean, interactive way to gather user information across multiple steps. Built entirely with Vanilla JS, SCSS, and following BEM notation, the form transitions smoothly between steps, validating input along the way. This project highlights skills in DOM manipulation, responsive design, and modular CSS architecture, making it ideal for practicing structured front-end development and creating user-friendly interfaces for real-world applications."
+    },
+    {
+        "title": "Ecommerce Product Page, Using BEM, SCSS and Vanilla JS.",
+        "liveURL": "https://ecommerce-product-page-five-pi.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Ecommerce-product-page",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1727419142/Screenshots/u7nedywfbcwbdymhin78.jpg",
+        "description": "This ecommerce product page focuses on showcasing a single product with interactive features like image galleries, quantity selection, and a cart system. Implemented with Vanilla JS, SCSS, and BEM methodology, the project emphasizes clean code, responsive layouts, and accessibility. It is designed to mimic a professional product page experience while giving hands-on practice with UI interactivity and front-end architecture, useful for portfolio demonstrations or real ecommerce implementations."
+    },
+    {
+        "title": "Job listing app, using SCSS, BEM and Vanilla JS.",
+        "liveURL": "https://job-filtering-app.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Job-filtering-app",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1726678466/Screenshots/iqtbtdfoz1bjq8ktyvdo.jpg",
+        "description": "This job listing app allows users to filter and explore various job opportunities using multiple tags. Built with Vanilla JS, SCSS, and BEM notation, it demonstrates dynamic DOM manipulation and state management without external libraries. The project emphasizes user interaction design, responsive layouts, and the practical use of structured CSS, providing a hands-on example of building functional front-end applications that resemble real job boards."
+    },
+    {
+        "title": "Countries API, added pagination. Wrote using BEM, SCSS and Vanilla JS.",
+        "liveURL": "https://rest-countries-tau-ten.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/REST-countries",
+        "difficulty": 1,
+        "toolsUsed": ["html", "css", "js", "api"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1726427477/Screenshots/t8uv6qzczbfttamlfvv4.jpg",
+        "description": "This project interacts with a public REST Countries API to display country information in a paginated interface. It highlights skills in API consumption, dynamic content rendering, and efficient front-end design. Built using Vanilla JS, SCSS, and following BEM, the app ensures a responsive, visually clean experience and reinforces best practices in modular CSS and structured JavaScript for beginners and intermediate developers."
+    },
+    {
+        "title": "Comments Section Vanilla JS, SCSS and BEM Notation.",
+        "liveURL": "https://interactive-comments-section-theta-seven.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/interactive-comments-section",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1726079371/Screenshots/voigaegrcwrifwsz8r6n.jpg",
+        "description": "This interactive comments section allows users to post, edit, and reply to comments dynamically. Built entirely with Vanilla JS, SCSS, and BEM notation, the project demonstrates practical application of DOM manipulation, component structure, and responsive design. It’s a great showcase of front-end skills for user interaction management, state updates, and maintaining clean, scalable CSS architecture for complex UI components."
+    },
+    {
+        "title": "Calculator App, Grid, Vanilla JS, SCSS and BEM, Also Responsive.",
+        "liveURL": "https://magnificent-croissant-c8dc08.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Calculator",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1725628385/Screenshots/w50uqpcj40hwlitbx9o1.jpg",
+        "description": "This calculator app provides a fully functional, responsive interface for basic arithmetic operations. Using Vanilla JS, SCSS, and BEM methodology, it highlights event handling, grid layout implementation, and modular CSS practices. Designed for both desktop and mobile screens, it’s an excellent project for learning structured front-end development and creating a clean, interactive utility that showcases programming fundamentals in a practical context."
+    },
+    {
+        "title": "Product Cart With List Using SCSS and BEM Notation",
+        "liveURL": "https://product-list-with-cart-tawny.vercel.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Product-List-With-Cart-/tree/main",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1724866088/Screenshots/frecu23mmiat3u4fpzzy.jpg",
+        "description": "This project implements a product listing page with an interactive cart system. Users can add and remove items, and see a real-time update of the cart contents. Built with Vanilla JS, SCSS, and BEM notation, it focuses on clean code structure, modular styling, and DOM manipulation skills. The app demonstrates essential e-commerce interactions and a responsive layout suitable for both desktop and mobile users."
+    },
+    {
+        "title": "To Do App",
+        "liveURL": "https://cute-pothos-c48bea.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/ToDo-App",
+        "difficulty": 4,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1721192660/Screenshots/ozyp651l8vvpehc6jw7p.jpg",
+        "description": "This To-Do application allows users to create, edit, complete, and delete tasks with a smooth, interactive UI. Developed using Vanilla JS, SCSS, and BEM methodology, it emphasizes state management, DOM manipulation, and responsive design principles. It’s ideal for demonstrating front-end capabilities, user experience considerations, and modular code architecture, making it a solid example of building functional productivity tools."
+    },
+    {
+        "title": "Contact form",
+        "liveURL": "https://poetic-biscuit-b1e9ff.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/contact-form-",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1718085237/Screenshots/ohqn1rqp3qfjcj2ut18s.jpg",
+        "description": "A clean, functional contact form that validates user input and provides a responsive layout. Built using Vanilla JS, SCSS, and BEM notation, the project demonstrates practical form handling, input validation, and modular CSS structure. It serves as a foundational example for creating interactive web forms that maintain accessibility and usability standards across devices."
+    },
+    {
+        "title": "Interactive card details form without responsivness",
+        "liveURL": "https://majestic-cocada-c23b55.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Interactive-card-details-form",
+        "difficulty": 1,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1715969717/Screenshots/dxtnvacrkan0gld5kczd.jpg",
+        "description": "This interactive card details form collects payment information through a visually appealing card interface. While it’s not responsive, the project demonstrates key skills in DOM manipulation, input validation, and styling using SCSS and BEM. It’s a practical exercise in building structured, functional front-end forms with attention to user interaction and visual layout."
+    },
+    {
+        "title": "Advice generator app using API",
+        "liveURL": "https://lighthearted-pony-ab8045.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Advice-generator-app",
+        "difficulty": 4,
+        "toolsUsed": ["html", "css", "js", "api"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1714015636/Screenshots/obyaiebgyrgao8obdqqw.jpg",
+        "description": "This advice generator app fetches random advice from a public API and displays it to users in a clean, dynamic interface. Developed with Vanilla JS, SCSS, and BEM methodology, it focuses on asynchronous API calls, DOM updates, and modular CSS. The project is a great demonstration of handling external data in a front-end application while maintaining responsive and visually structured layouts."
+    },
+    {
+        "title": "Huddle Landing Page",
+        "liveURL": "https://marvelous-kangaroo-de1194.netlify.app",
+        "repoURL": "https://github.com/GeorgeKandelaki/huddle-landing-page",
+        "difficulty": 4,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1713413107/Screenshots/eo2j0qpj1byryp9l5o5n.jpg",
+        "description": "A visually engaging landing page built to showcase a fictional product or service. Utilizing HTML and CSS, this project focuses on layout design, typography, and responsive considerations. It’s a practical exercise for creating marketing-focused web pages that capture user attention while remaining clean and navigable."
+    },
+    {
+        "title": "Profile Card Component",
+        "liveURL": "https://meek-figolla-b9acf4.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Profile-Card-Component",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1712515109/Screenshots/rcwjzxjgtxggw0ep8gqr.jpg",
+        "description": "This profile card component highlights user information in a clean, modular card layout. Built with HTML and CSS, it demonstrates component design, spacing, and visual hierarchy principles. Perfect for portfolio projects or showcasing front-end styling capabilities without the need for JavaScript."
+    },
+    {
+        "title": "Coding bootcamp slider component",
+        "liveURL": "https://friendly-bavarois-801ee9.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/coding-bootcamp-slider-component",
+        "difficulty": 4,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1712289458/Screenshots/bqgceg5vtvpvwi11twpn.jpg",
+        "description": "This slider component allows users to navigate through multiple slides showcasing content or testimonials. Built using Vanilla JS, HTML, and CSS, the project focuses on interactive UI elements, transitions, and responsive design. It’s an effective way to practice front-end interactivity and modular component design."
+    },
+    {
+        "title": "tip calculator",
+        "liveURL": "https://elegant-shortbread-c5612a.netlify.app",
+        "repoURL": "https://github.com/GeorgeKandelaki/tip-calculator",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1711655391/Screenshots/yjmfgei6nzg9hndpup6l.jpg",
+        "description": "A simple tip calculator that allows users to quickly calculate the tip amount based on the bill and selected percentage. Developed with Vanilla JS, HTML, and CSS, the project demonstrates user input handling, arithmetic calculations, and dynamic content updating while keeping a clean, responsive design."
+    },
+    {
+        "title": "Testimonials section using grid",
+        "liveURL": "https://wonderful-travesseiro-7eb4fc.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Grid-testimonials-section",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1711372477/Screenshots/zd5raqziu9pg5kipdffb.jpg",
+        "description": "This project presents a testimonials section using CSS Grid layout. Designed for clarity and visual balance, it focuses on structuring content in a grid-based format that is responsive and easily adjustable. It demonstrates skills in modern CSS techniques and effective component layout design."
+    },
+    {
+        "title": "Huddel landing page",
+        "liveURL": "https://precious-dodol-8f4af8.netlify.app",
+        "repoURL": "https://github.com/GeorgeKandelaki/Huddle-landing-page-",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1710857171/Screenshots/r4vpa1cwczkllyqxlbwr.jpg",
+        "description": "A simple landing page emphasizing clean design and clear call-to-actions. Built using HTML and CSS, this project is focused on layout structure, typography, and visual balance. It’s a practical exercise in creating a functional and visually appealing web landing page."
+    },
+    {
+        "title": "Ping single page site",
+        "liveURL": "https://dashing-dasik-5fc2b2.netlify.app",
+        "repoURL": "https://github.com/GeorgeKandelaki/Ping-single-page-site",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1710336832/Screenshots/jdbfomkkv7pyvfnkhh5l.jpg",
+        "description": "A single-page website designed for a fictional service or product, using modern HTML and CSS. The project highlights clean design, navigation, and responsive layout techniques. It’s a useful practice project for creating professional-looking single-page sites without JavaScript."
+    },
+    {
+        "title": "Fylo landing page",
+        "liveURL": "https://fabulous-cendol-bd7f83.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Fylo-landing-page",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1710168107/Screenshots/d2weicxoozeebmlfwlxy.jpg",
+        "description": "A landing page for a fictional cloud storage service, showcasing features and benefits. Built using HTML and CSS, this project emphasizes layout structure, typography, and responsive design. It’s ideal for practicing clean, visually appealing front-end implementations."
+    },
+    {
+        "title": "Single price grid component",
+        "liveURL": "https://sprightly-babka-64b73c.netlify.app",
+        "repoURL": "https://github.com/GeorgeKandelaki/Single-price-grid-component",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1710006497/Screenshots/zb44pkm5l1kglyeycgqp.jpg",
+        "description": "A component displaying pricing plans in a grid format. Built with HTML and CSS, it highlights visual hierarchy, spacing, and responsive design principles. Perfect for practicing component layouts that clearly convey information to users."
+    },
+    {
+        "title": "Article preview component",
+        "liveURL": "https://adorable-cendol-690d57.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Article-preview-component",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1709834371/Screenshots/c9krnljs6snzse6nhqph.jpg",
+        "description": "A small component that previews articles with an image, title, and short description. Developed using HTML and CSS, it focuses on clean layout, typography, and visual balance, making it a good example of component-level design."
+    },
+    {
+        "title": "Interactive pricing component",
+        "liveURL": "https://ecstatic-pika-0f6e19.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Interactive-pricing-component",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css", "js"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1709507312/Screenshots/kp04zyr9ncum0ztm1f9n.jpg",
+        "description": "This interactive pricing component allows users to toggle between different pricing options dynamically. Using HTML, CSS, and Vanilla JS, it demonstrates DOM manipulation, UI interactivity, and responsive component design. A useful project for learning how to combine styling and logic to create engaging user experiences."
+    },
+    {
+        "title": "Four card feature section",
+        "liveURL": "https://practical-mochi-061a84.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Four-card-feature-section",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1709342022/Screenshots/q8j2mc2wlr8dg5mxmrp1.jpg",
+        "description": "A feature section displaying four cards side by side with icons and descriptions. Built with HTML and CSS, this project focuses on grid layout, spacing, and visual balance. It’s a clean design example for showcasing multiple features in a structured and visually appealing manner."
+    },
+    {
+        "title": "Base Apparel Landing Page",
+        "liveURL": "https://gleaming-meringue-b38cc1.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Base-Apparel-Landing-Page",
+        "difficulty": 4,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1709151315/Screenshots/gqfyxhk8t0aokro3u5z9.jpg",
+        "description": "A landing page for a fictional clothing brand, highlighting products and subscription offers. Created with HTML and CSS, it emphasizes responsive design, visual hierarchy, and user-friendly layout. Perfect for portfolio display or practicing clean, professional web design skills."
+    },
+    {
+        "title": "Insure Landing Page",
+        "liveURL": "https://ephemeral-bienenstitch-c7d48d.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Insure-Landing-Page",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1709051732/Screenshots/y0gkqeh8nkhjvchigf9b.jpg",
+        "description": "A landing page for a fictional insurance company, focusing on services and customer trust elements. Developed using HTML and CSS, it emphasizes layout structure, typography, and responsive design principles. A practical example for creating marketing-focused websites."
+    },
+    {
+        "title": "Loopstudios Landing Page",
+        "liveURL": "https://eloquent-cat-90fbc4.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Loopstudios-landing-page",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708952451/Screenshots/xadf5gkgfwrvypjfz7mh.jpg",
+        "description": "A visually driven landing page for a creative agency, showcasing projects and services. Built with HTML and CSS, it demonstrates modern design trends, responsive layout, and visual storytelling through web components."
+    },
+    {
+        "title": "Bookmark Landing Page",
+        "liveURL": "https://warm-tulumba-b27345.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Bookmark-landing-page",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708853182/Screenshots/rqysdjhfwvg8hdzjjvyn.jpg",
+        "description": "A landing page promoting a bookmarking service, emphasizing clear calls-to-action and responsive layout. Implemented with HTML and CSS, it demonstrates design for usability and visual clarity, suitable for practicing marketing-focused web pages."
+    },
+    {
+        "title": "Sunnyside Landing Page",
+        "liveURL": "https://resilient-twilight-f8d0dc.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Sunnyside-landing-page",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708754018/Screenshots/tbkqpqnnsrtms6er7g0e.jpg",
+        "description": "A creative agency landing page with a focus on visual aesthetics and clear navigation. Built using HTML and CSS, the project highlights layout techniques, responsive design, and visual storytelling elements. A solid example of effective front-end design for marketing purposes."
+    },
+    {
+        "title": "Fylo Dark Theme Landing Page",
+        "liveURL": "https://stoic-banoffee-b42b57.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Fylo-dark-theme-landing-page",
+        "difficulty": 2,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708654872/Screenshots/xndjrbblafg4o0dcjq6u.jpg",
+        "description": "A dark theme variant of a cloud storage service landing page, focusing on modern visual appeal. Developed with HTML and CSS, it emphasizes contrast, typography, and responsive layout. It’s a practical example of designing alternative visual themes for web interfaces."
+    },
+    {
+        "title": "Easybank Landing Page",
+        "liveURL": "https://tender-lokum-86e631.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Easybank-landing-page",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708555632/Screenshots/vi6xakkl4z3h0e7np5xq.jpg",
+        "description": "A landing page for a fictional banking service, highlighting features and customer benefits. Built using HTML and CSS, it focuses on layout, typography, and responsive design. Useful for practicing professional, marketing-oriented web page designs."
+    },
+    {
+        "title": "Manage Landing Page",
+        "liveURL": "https://adorable-bavarois-4f4d0d.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Manage-landing-page",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708456273/Screenshots/yrpbrcws4lpjaoqj7lbu.jpg",
+        "description": "A landing page for a productivity tool, designed to showcase features and ease of use. Developed with HTML and CSS, it demonstrates visual hierarchy, responsive design, and clear call-to-action sections. A solid front-end project for portfolio presentation."
+    },
+    {
+        "title": "Insure Dark Theme Landing Page",
+        "liveURL": "https://adorable-pavlova-03ef87.netlify.app/",
+        "repoURL": "https://github.com/GeorgeKandelaki/Insure-Dark-Theme-Landing-Page",
+        "difficulty": 3,
+        "toolsUsed": ["html", "css"],
+        "screenshot": "https://res.cloudinary.com/dz209s6jk/image/upload/v1708356920/Screenshots/kzlp1of0c6kvmzscmh1u.jpg",
+        "description": "A dark theme version of an insurance service landing page, focusing on modern aesthetics and user engagement. Built with HTML and CSS, it emphasizes typography, contrast, and responsive layouts. This project is ideal for exploring visual variations and theme design for web interfaces."
+    }
+]

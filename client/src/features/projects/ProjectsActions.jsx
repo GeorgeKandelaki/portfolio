@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 import Filter from "../../ui/Filter";
 import SortBy from "../../ui/SortBy";
+import Button from "../../ui/Button";
+import Modal from "../../ui/Modal";
+
+import CreateProjectForm from "./CreateProjectForm";
+
+import { useUser } from "../../context/userContext";
 
 const StyledProjectsActions = styled.div`
     display: flex;
@@ -9,8 +15,22 @@ const StyledProjectsActions = styled.div`
 `;
 
 function ProjectsActions() {
+    const { isAuthenticated } = useUser();
+
     return (
         <StyledProjectsActions>
+            {isAuthenticated && (
+                <Modal>
+                    <Modal.Open opens="projectForm">
+                        <Button>Create Project</Button>
+                    </Modal.Open>
+
+                    <Modal.Window name="projectForm">
+                        <CreateProjectForm />
+                    </Modal.Window>
+                </Modal>
+            )}
+
             <Filter
                 filterField="difficulty"
                 options={[

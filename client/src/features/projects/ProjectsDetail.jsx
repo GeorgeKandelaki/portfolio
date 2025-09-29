@@ -23,13 +23,6 @@ const Projects = styled.div`
 function ProjectsDetail() {
     const { projects, isLoading } = useProjects();
 
-    // useEffect(
-    //     function () {
-    //         if (!projects) getProjects();
-    //     },
-    //     [projects, getProjects]
-    // );
-
     if (isLoading) return <Spinner />;
 
     return (

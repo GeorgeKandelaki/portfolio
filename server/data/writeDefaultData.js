@@ -1,6 +1,7 @@
 const axios = require("axios");
 const Project = require("../models/projectModel");
 const mongoose = require("mongoose");
+const fs = require("fs");
 
 const URL = "https://www.frontendmentor.io/api/v3/learners/6506d5737b9455f829e62ca7/solutions";
 
@@ -50,6 +51,17 @@ async function uploadFrontendMentorData() {
     return null;
 }
 
+(function uploadDataFromJSON() {
+    let file = fs.readFileSync("/home/matrix/stuff/projects/Personal_Projects/portfolio/server/data/data.json", {
+        encoding: "utf-8",
+    });
+    file = file.trim();
+    // THIS DAMN JSON WAS WRITTEN BY GPT AND IT IS INACCURATE
+    const data = JSON.parse(file);
+
+    console.log(data.length);
+})();
+
 async function main() {
     try {
         // <-- make sure this is correct
@@ -70,5 +82,3 @@ async function main() {
         console.error("Error:", err);
     }
 }
-
-main();
