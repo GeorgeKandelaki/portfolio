@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const projectsRouter = require("./routers/projectsRouter");
 const userRouter = require("./routers/userRouter");
@@ -25,6 +26,8 @@ app.use(
         credentials: true,
     })
 );
+
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.json({ limit: "100kb" }));
 app.use(cookieParser());

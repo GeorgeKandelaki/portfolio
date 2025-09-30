@@ -25,6 +25,8 @@ function ProjectsDetail() {
 
     if (isLoading) return <Spinner />;
 
+    if (!projects) return <p>Something Went Wrong! 🚨</p>;
+
     return (
         <StyledProjects>
             <Row type="horizontal">

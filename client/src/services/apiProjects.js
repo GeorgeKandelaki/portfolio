@@ -9,3 +9,9 @@ export async function getProjects() {
 
     return response;
 }
+
+export async function updateProject(id) {}
+
+export async function createProject(project) {}
+
+export async function deleteProject(id) {}

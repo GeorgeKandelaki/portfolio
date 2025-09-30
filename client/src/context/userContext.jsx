@@ -36,6 +36,8 @@ function UserProvider({ children }) {
             dispatch({ type: "user/loading" });
 
             const response = await userIsAuthenticated();
+            if (!response) return toast.error("Something went wrong!");
+
             const { data: data } = response;
 
             if (data.status !== "Success") return toast.error("Couldn't Authenticate User.");
@@ -43,7 +45,7 @@ function UserProvider({ children }) {
             dispatch({ type: "user/fetched", payload: data.user });
             dispatch({ type: "user/authenticate", payload: data.isAuthenticated });
         } catch (err) {
-            console.error(err.response.data);
+            console.error(err);
         } finally {
             dispatch({ type: "user/loaded" });
         }
