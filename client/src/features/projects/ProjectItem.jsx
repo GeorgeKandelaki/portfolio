@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
+import Menus from "../../ui/Menus";
+
+import { useUser } from "../../context/userContext";
 
 const StyledProjectItem = styled.div`
     box-shadow: var(--shadow-md);
@@ -40,6 +43,7 @@ const StyledImageContainer = styled.div`
     }
 `;
 function ProjectItem({ project }) {
+    const { isAuthenticated } = useUser();
     return (
         <StyledProjectItem>
             <StyledImageContainer style={{ marginBottom: "1.8rem" }}>
@@ -47,6 +51,17 @@ function ProjectItem({ project }) {
             </StyledImageContainer>
 
             <StyledProjectInfo>
+                {isAuthenticated && (
+                    <Menus.Menu>
+                        <Menus.Toggle id={project._id}></Menus.Toggle>
+
+                        <Menus.List id={project._id}>
+                            <Menus.Button>Edit</Menus.Button>
+                            <Menus.Button>Delete</Menus.Button>
+                        </Menus.List>
+                    </Menus.Menu>
+                )}
+
                 <Heading as="h3">{project.title}</Heading>
                 <p>{project.description}</p>
             </StyledProjectInfo>

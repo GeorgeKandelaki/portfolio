@@ -6,6 +6,7 @@ import Heading from "../../ui/Heading";
 import ProjectsActions from "./ProjectsActions";
 import ProjectItem from "./ProjectItem";
 import { useProjects } from "../../context/ProjectsContext";
+import Menus from "../../ui/Menus";
 
 const StyledProjects = styled.div`
     display: flex;
@@ -36,9 +37,11 @@ function ProjectsDetail() {
             </Row>
 
             <Projects>
-                {projects.map((project) => (
-                    <ProjectItem project={project} key={project._id} />
-                ))}
+                <Menus>
+                    {projects.map((project) => (
+                        <ProjectItem project={project} key={project._id} />
+                    ))}
+                </Menus>
             </Projects>
         </StyledProjects>
     );

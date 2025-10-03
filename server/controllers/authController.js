@@ -91,3 +91,10 @@ exports.checkLoggedIn = catchAsync(async function (req, res, next) {
         return res.status(200).json({ status: "Success", isAuthenticated: false });
     }
 });
+
+exports.restrictTo = function (roles) {
+    return function (req, res, next) {
+        if (!roles.includes(req.user.role)) return next(new Error("You are NOT allowed to do this action!"));
+        return next();
+    };
+};
