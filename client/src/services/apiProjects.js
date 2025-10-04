@@ -10,8 +10,42 @@ export async function getProjects() {
     return response;
 }
 
-export async function updateProject(id) {}
+export async function updateProject(id, updatedProject) {
+    const response = await axios({
+        method: "patch",
+        url: `${URL}/${id}`,
+        data: {
+            updateProject,
+        },
+        withCredentials: true,
+    });
 
-export async function createProject(project) {}
+    if (!response) throw new Error("Couldn't update project");
 
-export async function deleteProject(id) {}
+    return response;
+}
+
+export async function createProject(projectObj) {
+    const response = await axios({
+        method: "post",
+        url: URL,
+        data: {
+            projectObj,
+        },
+    });
+
+    if (!response) throw new Error("Couldn't create project");
+
+    return response;
+}
+
+export async function deleteProject(id) {
+    const response = await axios({
+        method: "delete",
+        url: `${URL}/${id}`,
+    });
+
+    if (!response) throw new Error("Couldn't delete project");
+
+    return response;
+}

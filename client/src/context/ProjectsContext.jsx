@@ -45,6 +45,10 @@ function ProjectsProvider({ children }) {
         }
     }, []);
 
+    const updateProject = useCallback(async function () {}, []);
+
+    const deleteProject = useCallback(async function () {}, []);
+
     useEffect(
         function () {
             if (!projects) getProjects();
@@ -52,7 +56,11 @@ function ProjectsProvider({ children }) {
         [getProjects, projects]
     );
 
-    return <ProjectsContext.Provider value={{ projects, isLoading, getProjects }}>{children}</ProjectsContext.Provider>;
+    return (
+        <ProjectsContext.Provider value={{ projects, isLoading, getProjects, updateProject, deleteProject }}>
+            {children}
+        </ProjectsContext.Provider>
+    );
 }
 
 function useProjects() {

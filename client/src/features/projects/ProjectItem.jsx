@@ -3,8 +3,12 @@ import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
 import Menus from "../../ui/Menus";
+import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import CreateProjectForm from "./CreateProjectForm";
 
 import { useUser } from "../../context/userContext";
+import { HiPencil, HiTrash } from "react-icons/hi2";
 
 const StyledProjectItem = styled.div`
     box-shadow: var(--shadow-md);
@@ -52,14 +56,27 @@ function ProjectItem({ project }) {
 
             <StyledProjectInfo>
                 {isAuthenticated && (
-                    <Menus.Menu>
-                        <Menus.Toggle id={project._id}></Menus.Toggle>
+                    <Modal>
+                        <Menus.Menu>
+                            <Menus.Toggle id={project._id}></Menus.Toggle>
 
-                        <Menus.List id={project._id}>
-                            <Menus.Button>Edit</Menus.Button>
-                            <Menus.Button>Delete</Menus.Button>
-                        </Menus.List>
-                    </Menus.Menu>
+                            <Menus.List id={project._id}>
+                                <Modal.Open opens="edit">
+                                    <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
+                                </Modal.Open>
+                                <Modal.Open opens="delete">
+                                    <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
+                                </Modal.Open>
+                            </Menus.List>
+
+                            <Modal.Window name="edit">
+                                <CreateProjectForm projectToEdit={project} />
+                            </Modal.Window>
+                            <Modal.Window name="delete">
+                                <ConfirmDelete resourceName="Project" />
+                            </Modal.Window>
+                        </Menus.Menu>
+                    </Modal>
                 )}
 
                 <Heading as="h3">{project.title}</Heading>

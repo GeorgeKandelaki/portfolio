@@ -20,7 +20,13 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
     const [liveURL, setLiveURL] = useState("");
     const [difficulty, setDifficulty] = useState("");
 
-    function handleSubmit(e) {}
+    function handleSubmit(e) {
+        e.preventDefault();
+
+        // if (projectToEdit) {
+        // } else {
+        // }
+    }
 
     return (
         <Form onSubmit={handleSubmit} type={onCloseModal ? "modal" : "regular"}>
