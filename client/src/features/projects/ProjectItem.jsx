@@ -9,6 +9,7 @@ import CreateProjectForm from "./CreateProjectForm";
 
 import { useUser } from "../../context/userContext";
 import { HiPencil, HiTrash } from "react-icons/hi2";
+import { useProjects } from "../../context/ProjectsContext";
 
 const StyledProjectItem = styled.div`
     box-shadow: var(--shadow-md);
@@ -46,12 +47,20 @@ const StyledImageContainer = styled.div`
         object-fit: cover; /* use cover for proper scaling */
     }
 `;
+
+const URL = "http://localhost:4000/static/images/projects";
+
 function ProjectItem({ project }) {
     const { isAuthenticated } = useUser();
+    const { isLoading, deleteProject } = useProjects();
+    const imagePath = project.screenshot.includes("cloudinary")
+        ? project.screenshot
+        : `${URL}/${project.screenshot}` || null;
+
     return (
         <StyledProjectItem>
             <StyledImageContainer style={{ marginBottom: "1.8rem" }}>
-                <img src={project.screenshot} alt={`Image of the Project #${project._id}`} />
+                <img src={imagePath} alt={`Image of the Project #${project._id}`} />
             </StyledImageContainer>
 
             <StyledProjectInfo>
@@ -73,7 +82,11 @@ function ProjectItem({ project }) {
                                 <CreateProjectForm projectToEdit={project} />
                             </Modal.Window>
                             <Modal.Window name="delete">
-                                <ConfirmDelete resourceName="Project" />
+                                <ConfirmDelete
+                                    resourceName="Project"
+                                    onConfirm={() => deleteProject(project._id)}
+                                    disabled={isLoading}
+                                />
                             </Modal.Window>
                         </Menus.Menu>
                     </Modal>

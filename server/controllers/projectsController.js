@@ -2,6 +2,17 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const Project = require("../models/projectModel");
 
+const multer = require("multer");
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => cb(null, "public/images/projects"),
+    filename: (req, file, cb) => {
+        cb(null, "project" + "_" + Date.now() + "_" + file.originalname);
+    },
+});
+
+exports.upload = multer({ storage: storage });
+
 exports.getProjects = catchAsync(async (req, res, next) => {
     const projects = await Project.find({});
     if (!projects) return next(new AppError("No Projects were found.", 404));
@@ -29,7 +40,7 @@ exports.getProject = catchAsync(async (req, res, next) => {
 });
 
 exports.createProject = catchAsync(async (req, res, next) => {
-    const project = await Project.create(req.body);
+    const project = await Project.create({ ...req.body, screenshot: req.file.filename });
 
     return res.status(201).json({
         status: "Success",
@@ -40,10 +51,14 @@ exports.createProject = catchAsync(async (req, res, next) => {
 });
 
 exports.updateProject = catchAsync(async (req, res, next) => {
-    const updatedProject = await Project.findByIdAndUpdate(req.params.projectId, req.body, {
-        new: true,
-        runValidators: true,
-    });
+    const updatedProject = await Project.findByIdAndUpdate(
+        req.params.projectId,
+        { ...req.body, screenshot: req.file.filename },
+        {
+            new: true,
+            runValidators: true,
+        }
+    );
 
     return res.status(200).json({
         status: "Success",

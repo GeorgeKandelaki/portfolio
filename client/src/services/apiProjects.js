@@ -14,9 +14,7 @@ export async function updateProject(id, updatedProject) {
     const response = await axios({
         method: "patch",
         url: `${URL}/${id}`,
-        data: {
-            updateProject,
-        },
+        data: updatedProject,
         withCredentials: true,
     });
 
@@ -29,9 +27,8 @@ export async function createProject(projectObj) {
     const response = await axios({
         method: "post",
         url: URL,
-        data: {
-            projectObj,
-        },
+        data: projectObj,
+        withCredentials: true,
     });
 
     if (!response) throw new Error("Couldn't create project");
@@ -43,6 +40,7 @@ export async function deleteProject(id) {
     const response = await axios({
         method: "delete",
         url: `${URL}/${id}`,
+        withCredentials: true,
     });
 
     if (!response) throw new Error("Couldn't delete project");

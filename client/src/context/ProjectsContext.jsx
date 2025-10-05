@@ -1,5 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
-import { getProjects as getProjectsApi } from "../services/apiProjects";
+import {
+    getProjects as getProjectsApi,
+    createProject as createProjectApi,
+    deleteProject as deleteProjectApi,
+} from "../services/apiProjects";
 import toast from "react-hot-toast";
 
 const initialState = {
@@ -11,6 +15,18 @@ function reducer(state, action) {
     switch (action.type) {
         case "projects/fetched":
             return { ...state, projects: action.payload };
+        case "projects/created":
+            return { ...state, projects: [...state.projects, action.payload] };
+        case "projects/deleted":
+            return { ...state, projects: state.projects.filter((project) => project._id !== action.payload) };
+        case "projects/updated":
+            return {
+                ...state,
+                projects: [
+                    ...state.projects.filter((project) => project._id !== action.payload.id),
+                    action.payload.updatedObj,
+                ],
+            };
 
         case "projects/loading":
             return { ...state, isLoading: true };
@@ -45,9 +61,50 @@ function ProjectsProvider({ children }) {
         }
     }, []);
 
-    const updateProject = useCallback(async function () {}, []);
+    const createProject = useCallback(async function (projectObj) {
+        try {
+            dispatch({ type: "projects/loading" });
+            const response = await createProjectApi(projectObj);
+            const { data } = response;
 
-    const deleteProject = useCallback(async function () {}, []);
+            if (data.status !== "Success") return toast.error("Oops! Couldn't create a Project.");
+
+            dispatch({ type: "projects/created", payload: data.data.project });
+            toast.success("Project Successfully Created!");
+        } catch (err) {
+            console.error(err);
+        } finally {
+            dispatch({ type: "projects/loaded" });
+        }
+    }, []);
+
+    const updateProject = useCallback(async function (id, updateProjectData) {
+        try {
+            dispatch({ type: "projects/loading" });
+        } catch (err) {
+            console.error(err);
+        } finally {
+            dispatch({ type: "projects/loaded" });
+        }
+    }, []);
+
+    const deleteProject = useCallback(async function (id) {
+        try {
+            dispatch({ type: "projects/loading" });
+
+            const response = await deleteProjectApi(id);
+            const { data } = response;
+
+            if (data.status !== "Success") return toast.error("Oops! Couldn't delete this project!");
+
+            dispatch({ type: "projects/deleted", payload: id });
+            toast.success("Project Successfully Deleted.");
+        } catch (err) {
+            console.error(err);
+        } finally {
+            dispatch({ type: "projects/loaded" });
+        }
+    }, []);
 
     useEffect(
         function () {
@@ -57,7 +114,9 @@ function ProjectsProvider({ children }) {
     );
 
     return (
-        <ProjectsContext.Provider value={{ projects, isLoading, getProjects, updateProject, deleteProject }}>
+        <ProjectsContext.Provider
+            value={{ projects, isLoading, getProjects, updateProject, deleteProject, createProject }}
+        >
             {children}
         </ProjectsContext.Provider>
     );
