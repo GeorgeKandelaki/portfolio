@@ -4,6 +4,8 @@ import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
 import Menus from "../../ui/Menus";
 import Modal from "../../ui/Modal";
+import SpinnerMini from "../../ui/SpinnerMini";
+
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import CreateProjectForm from "./CreateProjectForm";
 
@@ -53,6 +55,7 @@ const URL = "http://localhost:4000/static/images/projects";
 function ProjectItem({ project }) {
     const { isAuthenticated } = useUser();
     const { isLoading, deleteProject } = useProjects();
+
     const imagePath = project.screenshot.includes("cloudinary")
         ? project.screenshot
         : `${URL}/${project.screenshot}` || null;
@@ -92,8 +95,10 @@ function ProjectItem({ project }) {
                     </Modal>
                 )}
 
-                <Heading as="h3">{project.title}</Heading>
-                <p>{project.description}</p>
+                <Heading as="h3" style={{ marginBottom: "1rem" }}>
+                    {project.title}
+                </Heading>
+                <p style={{ fontSize: "1.4rem", color: "var(--color-grey-400" }}>{project.description}</p>
             </StyledProjectInfo>
 
             <StyledButtonGroup>

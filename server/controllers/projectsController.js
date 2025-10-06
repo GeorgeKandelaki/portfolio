@@ -51,14 +51,14 @@ exports.createProject = catchAsync(async (req, res, next) => {
 });
 
 exports.updateProject = catchAsync(async (req, res, next) => {
-    const updatedProject = await Project.findByIdAndUpdate(
-        req.params.projectId,
-        { ...req.body, screenshot: req.file.filename },
-        {
-            new: true,
-            runValidators: true,
-        }
-    );
+    const obj = { ...req.body };
+
+    if (req.file && req.file.filename) obj["screenshot"] = req.file.filename;
+
+    const updatedProject = await Project.findByIdAndUpdate(req.params.projectId, obj, {
+        new: true,
+        runValidators: true,
+    });
 
     return res.status(200).json({
         status: "Success",

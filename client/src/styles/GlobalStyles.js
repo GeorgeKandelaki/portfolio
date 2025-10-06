@@ -186,6 +186,11 @@ const GlobalStyles = createGlobalStyle`
         filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
     }
 
+    @media screen and (max-width: 78em) {
+        html {
+            font-size: 50%;
+        }
+    }
 
 `;
 

@@ -17,7 +17,7 @@ function reducer(state, action) {
             return { ...state, isLoading: true };
         case "user/loaded":
             return { ...state, isLoading: false };
-        case "user/authenticate":
+        case "user/authenticated":
             return { ...state, isAuthenticated: action.payload };
         case "user/fetched":
             return { ...state, user: action.payload };
@@ -43,7 +43,7 @@ function UserProvider({ children }) {
             if (data.status !== "Success") return toast.error("Couldn't Authenticate User.");
 
             dispatch({ type: "user/fetched", payload: data.user });
-            dispatch({ type: "user/authenticate", payload: data.isAuthenticated });
+            dispatch({ type: "user/authenticated", payload: data.isAuthenticated });
         } catch (err) {
             console.error(err);
         } finally {

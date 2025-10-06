@@ -15,19 +15,27 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
 
     const [title, setTitle] = useState(isEditSession ? editValues.title : "");
     const [description, setDescription] = useState(isEditSession ? editValues.description : "");
-    // const [screenshot, setScreenshot] = useState(isEditSession ? editValues.screenshot : "");
-    const [screenshot, setScreenshot] = useState(null);
+    const [screenshot, setScreenshot] = useState(isEditSession ? editValues.screenshot : null);
     const [repoURL, setRepoURL] = useState(isEditSession ? editValues.repoURL : "");
     const [liveURL, setLiveURL] = useState(isEditSession ? editValues.liveURL : "");
     const [difficulty, setDifficulty] = useState(isEditSession ? editValues.difficulty : "");
 
     function handleSubmit(e) {
         e.preventDefault();
+        const formData = new FormData();
 
         if (isEditSession) {
-            updateProject();
+            // formData.title = value
+            // formData["description"] = description
+            formData.append("title", title);
+            formData.append("description", description);
+            formData.append("screenshot", screenshot);
+            formData.append("repoURL", repoURL);
+            formData.append("liveURL", liveURL);
+            formData.append("difficulty", difficulty);
+
+            updateProject(editId, formData);
         } else {
-            const formData = new FormData();
             formData.append("title", title);
             formData.append("description", description);
             formData.append("screenshot", screenshot);

@@ -3,6 +3,7 @@ import {
     getProjects as getProjectsApi,
     createProject as createProjectApi,
     deleteProject as deleteProjectApi,
+    updateProject as updateProjectApi,
 } from "../services/apiProjects";
 import toast from "react-hot-toast";
 
@@ -19,7 +20,8 @@ function reducer(state, action) {
             return { ...state, projects: [...state.projects, action.payload] };
         case "projects/deleted":
             return { ...state, projects: state.projects.filter((project) => project._id !== action.payload) };
-        case "projects/updated":
+        case "projects/updated": {
+            console.log(action);
             return {
                 ...state,
                 projects: [
@@ -27,6 +29,7 @@ function reducer(state, action) {
                     action.payload.updatedObj,
                 ],
             };
+        }
 
         case "projects/loading":
             return { ...state, isLoading: true };
@@ -81,6 +84,13 @@ function ProjectsProvider({ children }) {
     const updateProject = useCallback(async function (id, updateProjectData) {
         try {
             dispatch({ type: "projects/loading" });
+            const response = await updateProjectApi(id, updateProjectData);
+            const { data } = response;
+
+            if (data.status !== "Success") return toast.error("Oops! Couldn't update the project.");
+
+            dispatch({ type: "projects/updated", payload: { id, updatedObj: data.data.project } });
+            toast.success("Project successfully updated.");
         } catch (err) {
             console.error(err);
         } finally {
