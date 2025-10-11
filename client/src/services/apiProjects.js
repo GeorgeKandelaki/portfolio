@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const URL = "http://localhost:4000/api/v1/projects";
-const URL = "https://portfolio-meab.onrender.com";
+const URL = "https://portfolio-meab.onrender.com/api/v1/projects";
 
 export async function getProjects() {
     const response = await axios(URL);
