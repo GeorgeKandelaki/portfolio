@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL = "http://localhost:4000/api/v1/users";
+// const URL = "http://localhost:4000/api/v1/users";
+const URL = "https://portfolio-meab.onrender.com";
 
 export async function userIsAuthenticated() {
     const response = await axios(`${URL}/check`, { withCredentials: true });

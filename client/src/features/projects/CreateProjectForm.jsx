@@ -13,12 +13,13 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
     const { _id: editId, ...editValues } = projectToEdit;
     const isEditSession = Boolean(editId);
 
-    const [title, setTitle] = useState(isEditSession ? editValues.title : "");
-    const [description, setDescription] = useState(isEditSession ? editValues.description : "");
-    const [screenshot, setScreenshot] = useState(isEditSession ? editValues.screenshot : null);
-    const [repoURL, setRepoURL] = useState(isEditSession ? editValues.repoURL : "");
-    const [liveURL, setLiveURL] = useState(isEditSession ? editValues.liveURL : "");
-    const [difficulty, setDifficulty] = useState(isEditSession ? editValues.difficulty : "");
+    const [title, setTitle] = useState(isEditSession ? editValues?.title : "");
+    const [description, setDescription] = useState(isEditSession ? editValues?.description : "");
+    const [screenshot, setScreenshot] = useState(isEditSession ? editValues?.screenshot : null);
+    const [repoURL, setRepoURL] = useState(isEditSession ? editValues?.repoURL : "");
+    const [liveURL, setLiveURL] = useState(isEditSession ? editValues?.liveURL : "");
+    const [difficulty, setDifficulty] = useState(isEditSession ? editValues?.difficulty : "");
+    const [tags, setTags] = useState(isEditSession ? editValues?.tags : "");
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -49,8 +50,7 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
 
     return (
         <Form onSubmit={handleSubmit} type={onCloseModal ? "modal" : "regular"}>
-            <Heading as="h2">{isEditSession ? `Update Project ${editValues.title}` : "Create Project"}</Heading>
-
+            <Heading as="h2">{isEditSession ? `Update Project: "${editValues.title}"` : "Create Project"}</Heading>
             <FormRow label="Title">
                 <Input value={title} onChange={(e) => setTitle(e.target.value)} name="title" id="title" />
             </FormRow>
@@ -77,6 +77,10 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
             <FormRow label="Live URL">
                 <Input value={liveURL} onChange={(e) => setLiveURL(e.target.value)} name="liveURL" id="liveURL" />
             </FormRow>
+            <FormRow label="Tags">
+                <Input value={tags} onChange={(e) => setTags(e.target.value)} />
+            </FormRow>
+            z
             <FormRow label="Screenshot">
                 <FileInput
                     accept="image/*"
@@ -86,7 +90,6 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
                     id="screenshot"
                 />
             </FormRow>
-
             <FormRow>
                 <Button variation="secondary" type="reset" onClick={() => onCloseModal?.()}>
                     Cancel

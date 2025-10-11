@@ -4,7 +4,8 @@ const jwt = require("jsonwebtoken");
 const { promisify } = require("util");
 
 function signToken(data) {
-    return jwt.sign(data, process.env.JWT_SECRET, { expiresIn: "90d" });
+    // TODO: Add Expiration Date
+    return jwt.sign(data, process.env.JWT_SECRET);
 }
 
 function createSendToken(user, statusCode, req, res) {

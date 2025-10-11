@@ -7,9 +7,7 @@ const projectSchema = new mongoose.Schema(
         repoURL: String,
         difficulty: { type: Number, enum: [0, 1, 2, 3, 4] },
         description: String,
-        toolsUsed: [
-            { type: String, enum: ["js", "react", "nodejs", "python", "mongodb", "sql", "scss", "css", "html", "api"] },
-        ],
+        tags: [String],
         screenshot: String,
     },
     { timestamps: true }

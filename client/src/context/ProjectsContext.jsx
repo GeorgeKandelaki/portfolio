@@ -20,16 +20,14 @@ function reducer(state, action) {
             return { ...state, projects: [...state.projects, action.payload] };
         case "projects/deleted":
             return { ...state, projects: state.projects.filter((project) => project._id !== action.payload) };
-        case "projects/updated": {
-            console.log(action);
+        case "projects/updated":
             return {
                 ...state,
                 projects: [
-                    ...state.projects.filter((project) => project._id !== action.payload.id),
                     action.payload.updatedObj,
+                    ...state.projects.filter((project) => project._id !== action.payload.id),
                 ],
             };
-        }
 
         case "projects/loading":
             return { ...state, isLoading: true };

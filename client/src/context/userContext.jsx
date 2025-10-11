@@ -62,6 +62,7 @@ function UserProvider({ children }) {
                 if (data.status !== "Success") throw new Error("Couldn't create an user");
 
                 dispatch({ type: "user/fetched", payload: data.data.user });
+                dispatch({ type: "user/authenticated", payload: true });
                 navigate("/");
             } catch (err) {
                 console.error(err);
@@ -82,6 +83,7 @@ function UserProvider({ children }) {
                 if (data.status !== "Success") throw new Error("Couldn't log in the user.");
 
                 dispatch({ type: "user/fetched", payload: data.data.user });
+                dispatch({ type: "user/authenticated", payload: true });
                 navigate("/");
             } catch (err) {
                 console.error(err);
