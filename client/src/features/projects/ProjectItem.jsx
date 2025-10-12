@@ -50,7 +50,8 @@ const StyledImageContainer = styled.div`
     }
 `;
 
-const URL = "http://localhost:4000/static/images/projects";
+// const URL = "http://localhost:4000/static/images/projects";
+const URL = "https://portfolio-meab.onrender.com/static/images/projects";
 
 function ProjectItem({ project }) {
     const { isAuthenticated } = useUser();
