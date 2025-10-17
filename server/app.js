@@ -9,7 +9,7 @@ const userRouter = require("./routers/userRouter");
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173", "https://portfolio-frontend-8zee.onrender.com"];
+const allowedOrigins = ["http://localhost:5173", "https://portfolio-frontend-8zee.onrender.com","https://portfolio-ashen-six-58.vercel.app/"];
 
 app.use(
     cors({
