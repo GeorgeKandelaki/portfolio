@@ -4,11 +4,17 @@ class APIFeatures {
         this.queryStr = queryStr;
     }
 
-    filter() {}
+    filter() {
+        return this.query;
+    }
 
-    sort() {}
+    sort() {
+        return this.query;
+    }
 
-    paginate() {}
+    paginate() {
+        return this.query;
+    }
 }
 
 module.exports = APIFeatures;

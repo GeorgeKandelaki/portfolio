@@ -7,7 +7,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, "public/images/projects"),
     filename: (req, file, cb) => {
-        cb(null, "project" + "_" + Date.now() + "_" + file.originalname);
+        cb(null, "project" + "_" + Date.now() + "_" + file.originalname.toLowerCase().replaceAll(" ", "_"));
     },
 });
 
@@ -40,7 +40,10 @@ exports.getProject = catchAsync(async (req, res, next) => {
 });
 
 exports.createProject = catchAsync(async (req, res, next) => {
-    const project = await Project.create({ ...req.body, screenshot: req.file.filename });
+    const project = await Project.create({
+        ...req.body,
+        screenshot: req.file.filename.toLowerCase().replaceAll(" ", "_"),
+    });
 
     return res.status(201).json({
         status: "Success",
@@ -53,7 +56,7 @@ exports.createProject = catchAsync(async (req, res, next) => {
 exports.updateProject = catchAsync(async (req, res, next) => {
     const obj = { ...req.body };
 
-    if (req.file && req.file.filename) obj["screenshot"] = req.file.filename;
+    if (req.file && req.file.filename) obj["screenshot"] = req.file.filename.toLowerCase().replaceAll(" ", "_");
 
     const updatedProject = await Project.findByIdAndUpdate(req.params.projectId, obj, {
         new: true,

@@ -57,7 +57,7 @@ function ProjectItem({ project }) {
     const { isAuthenticated } = useUser();
     const { isLoading, deleteProject } = useProjects();
 
-    const imagePath = project.screenshot.includes("cloudinary")
+    const imagePath = project.screenshot.includes("https://")
         ? project.screenshot
         : `${URL}/${project.screenshot}` || null;
 

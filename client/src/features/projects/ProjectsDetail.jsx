@@ -23,6 +23,7 @@ const Projects = styled.div`
 
 function ProjectsDetail() {
     const { projects, isLoading } = useProjects();
+    // TODO: Add Highlight/Top Projects
 
     if (isLoading) return <Spinner />;
 
@@ -38,7 +39,7 @@ function ProjectsDetail() {
 
             <Projects>
                 <Menus>
-                    {projects.map((project) => (
+                    {projects.toReversed().map((project) => (
                         <ProjectItem project={project} key={project._id} />
                     ))}
                 </Menus>

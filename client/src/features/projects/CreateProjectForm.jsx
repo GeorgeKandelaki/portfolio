@@ -80,7 +80,7 @@ function CreateProjectForm({ projectToEdit = {}, onCloseModal }) {
             <FormRow label="Tags">
                 <Input value={tags} onChange={(e) => setTags(e.target.value)} />
             </FormRow>
-            z
+
             <FormRow label="Screenshot">
                 <FileInput
                     accept="image/*"
