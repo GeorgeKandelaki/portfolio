@@ -1,10 +1,9 @@
 import axios from "axios";
+import { URL } from "../constants";
 
-// const URL = "http://localhost:4000/api/v1/users";
-const URL = "https://portfolio-meab.onrender.com/api/v1/users";
-
+const url = URL + "/api/v1/users";
 export async function userIsAuthenticated() {
-    const response = await axios(`${URL}/check`, { withCredentials: true });
+    const response = await axios(`${url}/check`, { withCredentials: true });
 
     if (!response) throw new Error("Oops! User Authentication Went Wrong!");
 
@@ -13,7 +12,7 @@ export async function userIsAuthenticated() {
 
 export async function loginUser(name, password) {
     const response = await axios({
-        url: `${URL}/login`,
+        url: `${url}/login`,
         method: "post",
         data: { name, password },
         withCredentials: true,
@@ -26,7 +25,7 @@ export async function loginUser(name, password) {
 
 export async function signupUser(name, password) {
     const response = await axios({
-        url: `${URL}/create`,
+        url: `${url}/create`,
         method: "post",
         data: {
             name,

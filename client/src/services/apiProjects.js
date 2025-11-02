@@ -1,10 +1,10 @@
 import axios from "axios";
+import { URL } from "../constants";
 
-// const URL = "http://localhost:4000/api/v1/projects";
-const URL = "https://portfolio-meab.onrender.com/api/v1/projects";
+const url = URL + "/api/v1/projects";
 
 export async function getProjects() {
-    const response = await axios(URL);
+    const response = await axios(url);
 
     if (!response) throw new Error("Couldn't fetch projects");
 
@@ -14,7 +14,7 @@ export async function getProjects() {
 export async function updateProject(id, updatedProject) {
     const response = await axios({
         method: "patch",
-        url: `${URL}/${id}`,
+        url: `${url}/${id}`,
         data: updatedProject,
         withCredentials: true,
     });
@@ -27,7 +27,7 @@ export async function updateProject(id, updatedProject) {
 export async function createProject(projectObj) {
     const response = await axios({
         method: "post",
-        url: URL,
+        url: url,
         data: projectObj,
         withCredentials: true,
     });
@@ -40,7 +40,7 @@ export async function createProject(projectObj) {
 export async function deleteProject(id) {
     const response = await axios({
         method: "delete",
-        url: `${URL}/${id}`,
+        url: `${url}/${id}`,
         withCredentials: true,
     });
 

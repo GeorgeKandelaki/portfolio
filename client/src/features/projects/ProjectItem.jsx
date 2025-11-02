@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import { URL } from "../../constants";
 
 import Heading from "../../ui/Heading";
 import Button from "../../ui/Button";
 import Menus from "../../ui/Menus";
 import Modal from "../../ui/Modal";
-import SpinnerMini from "../../ui/SpinnerMini";
 
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import CreateProjectForm from "./CreateProjectForm";
@@ -50,8 +50,7 @@ const StyledImageContainer = styled.div`
     }
 `;
 
-// const URL = "http://localhost:4000/static/images/projects";
-const URL = "https://portfolio-meab.onrender.com/static/images/projects";
+const url = URL + "/static/images/projects";
 
 function ProjectItem({ project }) {
     const { isAuthenticated } = useUser();
@@ -59,7 +58,7 @@ function ProjectItem({ project }) {
 
     const imagePath = project.screenshot.includes("https://")
         ? project.screenshot
-        : `${URL}/${project.screenshot}` || null;
+        : `${url}/${project.screenshot}` || null;
 
     return (
         <StyledProjectItem>
