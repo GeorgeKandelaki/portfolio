@@ -16,7 +16,6 @@ const fadeIn = keyframes`
 `;
 
 const StyledHome = styled.section`
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,14 +23,8 @@ const StyledHome = styled.section`
     text-align: center;
     padding: 6rem 2.4rem 4rem;
 
-    background: radial-gradient(circle at 30% 20%, var(--color-brand-50), transparent 70%);
-
-    @media (prefers-color-scheme: dark) {
-        background: radial-gradient(circle at 70% 80%, rgba(67, 56, 202, 0.15), transparent 70%);
-    }
-
     /* Center slightly above middle for perfect balance */
-    transform: translateY(-4vh);
+    transform: translateY(3vh);
 `;
 
 const Tagline = styled.p`
