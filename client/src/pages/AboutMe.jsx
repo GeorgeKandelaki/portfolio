@@ -128,6 +128,28 @@ function AboutMe() {
                 <Heading as="h2">Experience</Heading>
 
                 <Experience>
+                    <ExpTitle>Medical Hackathon Winner — PillMe</ExpTitle>
+                    <ExpTime>2025, November 7</ExpTime>
+                    <ExpDescription>
+                        Participated in a team of 4 at AlteUniversity and WON the Medical Hackathon. Built the entire
+                        frontend independently, fully handling UI, state management, and API communication. The project,
+                        PillMe, reminded users when to take their pills and included an AI assistant with lip-syncing
+                        and an interactive talking avatar capable of giving medical advice and pill-related guidance.
+                    </ExpDescription>
+                </Experience>
+
+                <Experience>
+                    <ExpTitle>DigieduHack 2025 — MEMO (Solo Developer)</ExpTitle>
+                    <ExpTime>2025, November 16</ExpTime>
+                    <ExpDescription>
+                        Competed at DigieduHack 2025, building MEMO — an app designed for students struggling to focus
+                        during lectures. Users could record their lectures and ask an AI assistant with lip-syncing and
+                        an interactive talking avatar for summaries and explanations. Developed the entire project
+                        independently, demonstrating strong problem-solving, autonomy, and end-to-end execution.
+                    </ExpDescription>
+                </Experience>
+
+                <Experience>
                     <ExpTitle>Personal Full-Stack Projects</ExpTitle>
                     <ExpTime>2023 – Present</ExpTime>
                     <ExpDescription>
